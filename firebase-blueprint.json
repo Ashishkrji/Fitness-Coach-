@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "contactInquiry": {
+      "title": "Contact Inquiry",
+      "description": "Store lead inquiries from the contact form",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "service": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "service", "message"]
+    },
+    "blogPost": {
+      "title": "Blog Post",
+      "description": "Fitness and health blog articles",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "content": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "category": { "type": "string" },
+        "image": { "type": "string" },
+        "author": { "type": "string" },
+        "publishedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "content", "publishedAt"]
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "description": "Client success stories and feedback",
+      "type": "object",
+      "properties": {
+        "clientName": { "type": "string" },
+        "role": { "type": "string" },
+        "comment": { "type": "string" },
+        "rating": { "type": "number" },
+        "image": { "type": "string" }
+      },
+      "required": ["clientName", "comment"]
+    },
+    "transformation": {
+      "title": "Transformation",
+      "description": "Before and after success stories",
+      "type": "object",
+      "properties": {
+        "clientName": { "type": "string" },
+        "description": { "type": "string" },
+        "beforeImage": { "type": "string" },
+        "afterImage": { "type": "string" },
+        "results": { "type": "string" }
+      },
+      "required": ["clientName", "beforeImage", "afterImage"]
+    }
+  },
+  "firestore": {
+    "inquiries": {
+      "schema": "contactInquiry",
+      "description": "Collection of contact inquiries"
+    },
+    "blog": {
+      "schema": "blogPost",
+      "description": "Collection of blog articles"
+    },
+    "testimonials": {
+      "schema": "testimonial",
+      "description": "Collection of testimonials"
+    },
+    "transformations": {
+      "schema": "transformation",
+      "description": "Collection of transformations"
+    }
+  }
+}
